@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GodotAsteroids"
-run/main_scene="res://Asteroids.tscn"
+run/main_scene="res://Scene/Asteroids.tscn"
 config/icon="res://icon.png"
 
 [input]
