@@ -1,18 +1,19 @@
-extends RigidBody2D
+extends Area2D
+
+export var speed = 100
+var dir = Vector2(0.0,1.0)
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	linear_velocity = Vector2(0.0, -100.0)
 	set_process(true)
-	pass # Replace with function body.
+
+func initialize(parent):
+	self.transform = parent
+	var rot = rotation
+	dir = Vector2(cos(rot - 3.14/2), sin(rot - 3.14/2))
+	
+
+func _physics_process(delta):
+	position += dir * speed * delta
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
