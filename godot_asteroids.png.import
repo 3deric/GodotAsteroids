@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/godot_asteroids.png-e87d2da42e0ce94f5c616656c5609c4a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://godot_asteroids.jpg"
+source_file="res://godot_asteroids.png"
+dest_files=[ "res://.import/godot_asteroids.png-e87d2da42e0ce94f5c616656c5609c4a.stex" ]
+
 [params]
 
 compress/mode=0
