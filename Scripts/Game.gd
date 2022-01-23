@@ -18,8 +18,8 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
-	var roundPosX =  int(player.position.x / 512) * 512 -512
-	var roundPosY =  int(player.position.y / 512) * 512 -512
+	var roundPosX =  int(player.position.x / 512) * 512 -1024
+	var roundPosY =  int(player.position.y / 512) * 512 -1024
 	
 	background.rect_position = Vector2(roundPosX, roundPosY)
 	
