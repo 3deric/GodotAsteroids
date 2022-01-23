@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/AsteroidsDebris.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/meteorGrey_small2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/meteorGrey_tiny2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/meteorGrey_tiny1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/meteorGrey_small1.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.2354
+
+[node name="AsteroidDebris" type="RigidBody2D" groups=["Asteroids"]]
+script = ExtResource( 1 )
+sprites = [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Asteroids"]]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 6 )

@@ -1,6 +1,9 @@
 extends RigidBody2D
 
+var asteroidDebris = preload("res://Prefabs/AsteroidDebris.tscn")
+
 export var maxAngularVel = 3.0
+export var maxDebris = 10
 export(Array, Texture) var sprites
 export var health = 5
 
@@ -27,8 +30,6 @@ func initialize(pos, dir, p, g):
 func _physics_process(delta):
 	deleteBounds()
 
-
-	
 func deleteBounds():
 	if(self.position.distance_to(player.position) > 1000.0):
 		destroyAsteroid()
@@ -36,8 +37,16 @@ func deleteBounds():
 func takeDamage(damage):
 	health-=damage
 	if(health <= 0):
+		spawnDebris()
 		destroyAsteroid()
 		
 func destroyAsteroid():
 	game.removeAsteroid()
 	queue_free()
+	
+func spawnDebris():
+	for n in maxDebris:
+		var d = asteroidDebris.instance()
+		game.add_child(d)
+		d.initialize(self.position)
+
