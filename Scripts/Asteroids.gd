@@ -5,11 +5,17 @@ export(Array, Texture) var sprites
 
 func _ready():
 	angular_damp = 0.0
-	var sprite = get_node("Sprite")
 	randomize()
+	
+	set_process(true)
+	
+func initialize(pos, dir):
+	randomize()
+	var sprite = get_node("Sprite")
 	var random = randi()%3+1
 	sprite.texture = sprites[random]
 	angular_velocity = rand_range(-maxAngularVel, maxAngularVel)
-	set_process(true)
+	self.position = pos
+	applied_force = -dir * rand_range(100.0, 500.0)
 
 
