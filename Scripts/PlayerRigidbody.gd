@@ -2,7 +2,7 @@ extends RigidBody2D
 
 var Projectile = preload("res://Prefabs/Projectile.tscn")
 
-export var accFac = 200.0
+export var accFac = 500.0
 export var steerFac = 0.05
 export var maxSpeed = 300
 export var cooldownTime = 0.25
