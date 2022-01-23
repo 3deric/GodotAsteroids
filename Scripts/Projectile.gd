@@ -1,7 +1,9 @@
 extends Area2D
 
 export var speed = 100
+export var maxLifetime = 2.0
 var dir = Vector2(0.0,1.0)
+var lifetime = 0.0
 
 
 func _ready():
@@ -15,5 +17,9 @@ func initialize(parent):
 
 func _physics_process(delta):
 	position += dir * speed * delta
+	lifetime+=delta
+	
+	if(lifetime > maxLifetime):
+		queue_free()
 
 

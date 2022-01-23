@@ -9,8 +9,10 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 49.0102
 
-[node name="Scene" type="Node2D"]
+[node name="AsteroidsGame" type="Node2D"]
 script = ExtResource( 5 )
+asteroidSpawnTime = 1.0
+maxAsteroids = 10
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -5000.0
